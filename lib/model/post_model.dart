@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'user_model.dart';
 
 class Post {
@@ -11,12 +10,12 @@ class Post {
   final int shares;
 
   const Post({
-    @required this.user,
-    @required this.caption,
-    @required this.timeAgo,
-    @required this.imageUrl,
-    @required this.likes,
-    @required this.comments,
-    @required this.shares,
+    required this.user,
+    required this.caption,
+    required this.timeAgo,
+    required this.imageUrl,
+    required this.likes,
+    required this.comments,
+    required this.shares,
   });
 }

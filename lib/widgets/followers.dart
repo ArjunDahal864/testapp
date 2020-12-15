@@ -4,8 +4,8 @@ class Followers extends StatelessWidget {
   final int project;
   final int followers;
   const Followers({
-    Key key, this.project, this.followers,
-  }) : super(key: key);
+   required this.project, required this.followers,
+  });
 
   @override
   Widget build(BuildContext context) {

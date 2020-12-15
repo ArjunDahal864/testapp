@@ -9,7 +9,7 @@ class PostContainer extends StatelessWidget {
   @required
   final Post post;
 
-  const PostContainer({Key key, this.post}) : super(key: key);
+  const PostContainer({required this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +34,11 @@ class PostContainer extends StatelessWidget {
                   height: 4.0,
                 ),
                 Text(post.caption),
+                // ignore: unnecessary_null_comparison
                 post.imageUrl != null
                     ? const SizedBox.shrink()
                     : const SizedBox(height: 6.0),
+                // ignore: unnecessary_null_comparison
                 post.imageUrl != null
                     ? Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -57,7 +59,7 @@ class PostContainer extends StatelessWidget {
 class _PostHeader extends StatelessWidget {
   final Post post;
 
-  const _PostHeader({Key key, @required this.post}) : super(key: key);
+  const _PostHeader({ required this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +105,7 @@ class _PostHeader extends StatelessWidget {
 class _PostStats extends StatelessWidget {
   final Post post;
 
-  const _PostStats({Key key, @required this.post}) : super(key: key);
+  const _PostStats({ required this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -175,15 +177,15 @@ class _PostButton extends StatelessWidget {
   // final String lable;
   final Function onTap;
 
-  const _PostButton({Key key, this.icon, this.onTap})
-      : super(key: key);
+  const _PostButton({ required this.icon, required this.onTap})
+     ;
 
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,
       child: InkWell(
-        onTap: onTap,
+        // onTap: onTap,
         child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             height: 25.0,

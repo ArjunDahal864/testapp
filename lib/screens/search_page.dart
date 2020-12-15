@@ -1,3 +1,4 @@
+
 import 'package:app/screens/desktop/desktop.dart';
 import 'package:app/screens/mobile/mobile.dart';
 import 'package:app/screens/tablet/tablet.dart';
@@ -10,7 +11,7 @@ class SearchPage extends StatelessWidget {
     return Responsive(
       mobile: MobileSearchPage(),
       tablet: TabletSearchPage(),
-      desktop: DesktopSearchPage(),
+      desktop:  DesktopSearchPage(),
     );
   }
 }

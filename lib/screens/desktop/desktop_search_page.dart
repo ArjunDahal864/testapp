@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 
 class DesktopSearchPage extends StatefulWidget {
-  DesktopSearchPage({Key key, this.title}) : super(key: key);
-  final String title;
+  // DesktopSearchPage({ required this.title});
+  // final String title;
 
   @override
   _DesktopSearchPageState createState() => new _DesktopSearchPageState();
