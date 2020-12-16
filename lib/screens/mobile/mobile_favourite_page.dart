@@ -12,29 +12,28 @@ class MobileFavouritePage extends StatefulWidget {
 }
 
 class _MobileFavouritePageState extends State<MobileFavouritePage> {
-    List<Post> _posts = <Post>[];
+  List<Favourite> _favs = <Favourite>[];
 
-
-  Future<List<Post>> fetchPost() async {
-    var url = 'http://10.0.2.2:8000/api';
+  Future<List<Favourite>> fetchPost() async {
+    var url = 'http://10.0.2.2:8000/api/fav/list';
     var response = await http.get(url);
-    var posts = <Post>[];
+    var favs = <Favourite>[];
     if (response.statusCode == 200) {
       var postsJson = jsonDecode(response.body);
       for (var postJson in postsJson) {
-        posts.add(Post.fromJson(postJson));
+        favs.add(Favourite.fromJson(postJson));
       }
     } else {
       print("issue");
     }
-    return posts;
+    return favs;
   }
 
   @override
   void initState() {
     fetchPost().then((value) {
       setState(() {
-        _posts.addAll(value);
+        _favs.addAll(value);
       });
     });
     super.initState();
@@ -42,21 +41,15 @@ class _MobileFavouritePageState extends State<MobileFavouritePage> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-ListView.builder(
-          itemCount: _posts.length,
-          itemBuilder: (context, position) {
-            return PostContainer(post: _posts[position],);
-            // return Card(
-            //   child: Padding(
-            //     padding: const EdgeInsets.all(20.0),
-            //     child: Text(
-            //       position.toString(),
-            //       style: TextStyle(fontSize: 22.0),
-            //     ),
-            //   ),
-            // );
-          },
+    return ListView.builder(
+      itemCount: _favs.length,
+      itemBuilder: (context, position) {
+        return FavItem(
+          title: _favs[position].caption,
+          time: _favs[position].time,
+          author: _favs[position].author.username,
         );
+      },
+    );
   }
 }

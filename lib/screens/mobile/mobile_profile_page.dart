@@ -9,10 +9,6 @@ class MobileProfilePage extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: NetworkImage("add you image URL here "),
-                    fit: BoxFit.cover)),
             child: Container(
               width: double.infinity,
               height: 200,

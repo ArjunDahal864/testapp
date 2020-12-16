@@ -2,11 +2,11 @@ import 'package:app/widgets/profile_avatar.dart';
 import 'package:flutter/material.dart';
 
 class FavItem extends StatelessWidget {
-  final String url;
   final String title;
-  final String description;
+  final String author;
+  final String time;
 
-  const FavItem({this.url, this.title, this.description});
+  const FavItem({this.title, this.author, this.time});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +15,6 @@ class FavItem extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ProfileAvatar(imageUrl: url),
-            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -31,7 +27,9 @@ class FavItem extends StatelessWidget {
                         fontSize: 18,
                         fontWeight: FontWeight.bold),
                   ),
-                  Text(description,
+                  Text(author,
+                      style: TextStyle(color: Colors.grey[400], fontSize: 16)),
+                  Text(time,
                       style: TextStyle(color: Colors.grey[400], fontSize: 16))
                 ],
               ),
