@@ -1,12 +1,12 @@
 # app
 
-A new Flutter project.
+an app which was assigned on 14th December 2020 .
 
 ## Getting Started
+The dependency that i have used here:
+```
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
+```
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
