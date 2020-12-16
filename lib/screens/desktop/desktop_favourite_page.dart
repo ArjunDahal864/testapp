@@ -1,8 +1,5 @@
 import 'dart:convert';
-
-import 'package:app/data/data.dart';
 import 'package:app/model/favourite.dart';
-import 'package:app/model/post_model.dart';
 import 'package:app/widgets/fav_item.dart';
 import 'package:app/widgets/profile_avatar.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +23,7 @@ class _DesktopFavouritePageState extends State<DesktopFavouritePage> {
         favs.add(Favourite.fromJson(postJson));
       }
     } else {
-      print("issue");
+      throw Exception();
     }
     return favs;
   }

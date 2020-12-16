@@ -23,7 +23,7 @@ class _DesktopHomePageState extends State<DesktopHomePage> {
         posts.add(Post.fromJson(postJson));
       }
     } else {
-      print("issue");
+      throw Exception();
     }
     return posts;
   }

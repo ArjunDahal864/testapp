@@ -1,4 +1,3 @@
-import 'package:app/widgets/profile_avatar.dart';
 import 'package:flutter/material.dart';
 
 class FavItem extends StatelessWidget {

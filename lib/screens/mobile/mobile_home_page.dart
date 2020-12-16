@@ -24,7 +24,7 @@ class _MobileHomePageState extends State<MobileHomePage> {
         posts.add(Post.fromJson(postJson));
       }
     } else {
-      print("issue");
+      throw Exception();
     }
     return posts;
   }

@@ -23,7 +23,7 @@ class _MobileFavouritePageState extends State<MobileFavouritePage> {
         favs.add(Favourite.fromJson(postJson));
       }
     } else {
-      print("issue");
+      throw Exception();
     }
     return favs;
   }
