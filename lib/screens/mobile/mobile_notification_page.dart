@@ -23,7 +23,6 @@ class _MobileNotificationPageState extends State<MobileNotificationPage> {
   }
 
   @override
-  // ignore: deprecated_member_use
   Widget build(BuildContext context) {
     return Scaffold(
       body: _dynamicBody(),

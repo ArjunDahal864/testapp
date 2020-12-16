@@ -12,13 +12,15 @@ class NotificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Responsive(
       mobile: BlocProvider(
-        create: (context) => NoticeBloc(notiRepo: NoticeReopImpl()
-        ),
+        create: (context) => NoticeBloc(notiRepo: NoticeReopImpl()),
         child: MobileNotificationPage(),
       ),
       // mobile: MobileNotificationPage(),
       desktop: DesktopNotificationPage(),
-      tablet: TabletNotificationPage(),
+      tablet: BlocProvider(
+        create: (context) => NoticeBloc(notiRepo: NoticeReopImpl()),
+        child: TabletNotificationPage(),
+      ),
     );
   }
 }
