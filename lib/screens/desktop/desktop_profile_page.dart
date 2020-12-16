@@ -105,6 +105,10 @@ class DesktopProfilePage extends StatelessWidget {
                     SizedBox(
                       height: 50,
                     ),
+                     Followers(
+                        followers: 500,
+                        project: 50,
+                      ),
                   ],
                 ),
               ),
@@ -119,10 +123,7 @@ class DesktopProfilePage extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Followers(
-                        followers: 500,
-                        project: 50,
-                      ),
+                     
                     ],
                   ),
                 ),

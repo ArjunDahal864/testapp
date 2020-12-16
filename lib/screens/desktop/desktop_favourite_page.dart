@@ -17,7 +17,7 @@ class _DesktopFavouritePageState extends State<DesktopFavouritePage> {
   List<Favourite> _favs = <Favourite>[];
 
   Future<List<Favourite>> fetchPost() async {
-    var url = 'http://10.0.2.2:8000/api/fav/';
+    var url = 'http://127.0.0.1:8000/api/fav/';
     var response = await http.get(url);
     var favs = <Favourite>[];
     if (response.statusCode == 200) {

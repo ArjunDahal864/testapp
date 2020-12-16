@@ -9,7 +9,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 class PostContainer extends StatelessWidget {
   final Post post;
 
-  const PostContainer({ this.post});
+  const PostContainer({this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class PostContainer extends StatelessWidget {
                 const SizedBox(
                   height: 4.0,
                 ),
-                Text(post.caption),
+                Text(post.caption,style: TextStyle(fontSize: 18),),
                 // ignore: unnecessary_null_comparison
                 post.image != null
                     ? const SizedBox.shrink()
@@ -59,13 +59,12 @@ class PostContainer extends StatelessWidget {
 class _PostHeader extends StatelessWidget {
   final Post post;
 
-  const _PostHeader({  this.post});
+  const _PostHeader({this.post});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-       
         const SizedBox(width: 8.0),
         Expanded(
           child: Column(
@@ -73,7 +72,11 @@ class _PostHeader extends StatelessWidget {
             children: [
               Text(
                 post.author.username,
-                style: TextStyle(fontWeight: FontWeight.w600),
+                style: Responsive.isTablet(context)
+                    ? TextStyle(fontWeight: FontWeight.w600, fontSize: 30)
+                    : Responsive.isMobile(context)
+                        ? TextStyle(fontWeight: FontWeight.w600)
+                        : TextStyle(fontWeight: FontWeight.w600, fontSize: 30),
               ),
             ],
           ),
@@ -90,7 +93,7 @@ class _PostHeader extends StatelessWidget {
 class _PostStats extends StatelessWidget {
   final Post post;
 
-  const _PostStats({  this.post});
+  const _PostStats({this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -99,10 +102,9 @@ class _PostStats extends StatelessWidget {
         Row(
           children: [
             Container(
-              decoration: BoxDecoration(
-                  color: Colors.white, shape: BoxShape.circle),
-              child:
-                  const Icon(Icons.favorite, size: 10.0, color: Colors.red),
+              decoration:
+                  BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+              child: const Icon(Icons.favorite, size: 10.0, color: Colors.red),
             ),
             Expanded(
               child: Text(
@@ -162,8 +164,7 @@ class _PostButton extends StatelessWidget {
   // final String lable;
   final Function onTap;
 
-  const _PostButton({  this.icon,  this.onTap})
-     ;
+  const _PostButton({this.icon, this.onTap});
 
   @override
   Widget build(BuildContext context) {

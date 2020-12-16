@@ -14,7 +14,7 @@ class DesktopHomePage extends StatefulWidget {
 class _DesktopHomePageState extends State<DesktopHomePage> {
    List<Post> _posts = <Post>[];
   Future<List<Post>> fetchPost() async {
-    var url = 'http://10.0.2.2:8000/api/post/';
+    var url = 'http://127.0.0.1:8000/api/post/';
     var response = await http.get(url);
     var posts = <Post>[];
     if (response.statusCode == 200) {

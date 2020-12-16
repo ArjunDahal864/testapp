@@ -20,7 +20,6 @@ class _NavigationScreenState extends State<NavigationScreen> {
     SearchPage(),
     NotificationPage(),
     ProfilePage(),
-
   ];
 
   final List<IconData> _icons = const [
@@ -32,19 +31,34 @@ class _NavigationScreenState extends State<NavigationScreen> {
     // Icons.
   ];
 
-int _selectedIndex = 0;
+  int _selectedIndex = 0;
 
-  
   @override
   Widget build(BuildContext context) {
-     final Size screenSize = MediaQuery.of(context).size;
+    final Size screenSize = MediaQuery.of(context).size;
     return DefaultTabController(
-      length: _icons.length,
-      child: Scaffold(
-        appBar: Responsive.isDesktop(context) ?
-        PreferredSize(
-          preferredSize: Size(screenSize.width, 100.0),
+        length: _icons.length,
+        child: Scaffold(
+          appBar: Responsive.isDesktop(context)
+              ? PreferredSize(
+                  preferredSize: Size(screenSize.width, 100.0),
                   child: Container(
+                    padding: const EdgeInsets.only(bottom: 12.0),
+                    color: Colors.white,
+                    child: CustomTabBar(
+                      icons: _icons,
+                      selectedIndex: _selectedIndex,
+                      onTap: (index) => setState(() => _selectedIndex = index),
+                    ),
+                  ),
+                )
+              : null,
+          body: IndexedStack(
+            children: _screens,
+            index: _selectedIndex,
+          ),
+          bottomNavigationBar: Responsive.isMobile(context)
+              ? Container(
                   padding: const EdgeInsets.only(bottom: 12.0),
                   color: Colors.white,
                   child: CustomTabBar(
@@ -52,30 +66,19 @@ int _selectedIndex = 0;
                     selectedIndex: _selectedIndex,
                     onTap: (index) => setState(() => _selectedIndex = index),
                   ),
-                ),
-        ) : null, 
-        body: IndexedStack(children: _screens, index: _selectedIndex,),
-        // drawer:Responsive.isTablet(context)? Container(
-        //           padding: const EdgeInsets.only(bottom: 12.0),
-        //           color: Colors.white,
-        //           child: CustomTabBar(
-        //             icons: _icons,
-        //             selectedIndex: _selectedIndex,
-        //             onTap: (index) => setState(() => _selectedIndex = index),
-        //           ),
-        //         ):null,
-                
-        bottomNavigationBar: Responsive.isMobile(context) ? Container(
-                  padding: const EdgeInsets.only(bottom: 12.0),
-                  color: Colors.white,
-                  child: CustomTabBar(
-                    icons: _icons,
-                    selectedIndex: _selectedIndex,
-                    onTap: (index) => setState(() => _selectedIndex = index),
-                  ),
-                ):null,
-        ),
-      
-    );
+                )
+              : Responsive.isTablet(context)
+                  ? Container(
+                      padding: const EdgeInsets.only(bottom: 12.0),
+                      color: Colors.white,
+                      child: CustomTabBar(
+                        icons: _icons,
+                        selectedIndex: _selectedIndex,
+                        onTap: (index) =>
+                            setState(() => _selectedIndex = index),
+                      ),
+                    )
+                  : null,
+        ));
   }
 }
