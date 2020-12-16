@@ -15,7 +15,7 @@ class MobileHomePage extends StatefulWidget {
 class _MobileHomePageState extends State<MobileHomePage> {
   List<Post> _posts = <Post>[];
   Future<List<Post>> fetchPost() async {
-    var url = 'http://10.0.2.2:8000/api';
+    var url = 'http://10.0.2.2:8000/api/post/';
     var response = await http.get(url);
     var posts = <Post>[];
     if (response.statusCode == 200) {
@@ -45,19 +45,16 @@ class _MobileHomePageState extends State<MobileHomePage> {
       child: Scaffold(
           body: Padding(
         padding: const EdgeInsets.only(top: 8.0),
-        // child: Text(_posts[0].caption.toString()),
         child: CustomScrollView(
             slivers: [
                 SliverList(
                     delegate: SliverChildBuilderDelegate((context, index) {
-                  // print(index);
                   final Post post = _posts[index];
                   return Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: PostContainer(post: post),
                   );
                 }, childCount: _posts.length)),
-                // Text(_posts.toString())
             ],
             ),
       )),

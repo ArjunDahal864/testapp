@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:app/model/models.dart';
 import 'package:app/widgets/fav_item.dart';
-import 'package:app/widgets/post.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -15,7 +14,7 @@ class _MobileFavouritePageState extends State<MobileFavouritePage> {
   List<Favourite> _favs = <Favourite>[];
 
   Future<List<Favourite>> fetchPost() async {
-    var url = 'http://10.0.2.2:8000/api/fav/list';
+    var url = 'http://10.0.2.2:8000/api/fav/';
     var response = await http.get(url);
     var favs = <Favourite>[];
     if (response.statusCode == 200) {
