@@ -23,17 +23,17 @@ class DesktopHomePage extends StatelessWidget {
           width: 700,
           child: Scaffold(
             body: CustomScrollView(
-              slivers: [
-                SliverList(
-                    delegate: SliverChildBuilderDelegate((context, index) {
-                  // print(index);
-                  final Post post = posts[index];
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: PostContainer(post: post),
-                  );
-                }, childCount: posts.length))
-              ],
+              // slivers: [
+              //   SliverList(
+              //       delegate: SliverChildBuilderDelegate((context, index) {
+              //     // print(index);
+              //     final Post post = posts[index];
+              //     return Padding(
+              //       padding: const EdgeInsets.only(top: 8.0),
+              //       child: PostContainer(post: post),
+              //     );
+              //   }, childCount: posts.length))
+              // ],
             ),
           ),
         ),

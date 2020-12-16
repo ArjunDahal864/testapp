@@ -4,7 +4,7 @@ class Followers extends StatelessWidget {
   final int project;
   final int followers;
   const Followers({
-   required this.project, required this.followers,
+    this.project,  this.followers,
   });
 
   @override

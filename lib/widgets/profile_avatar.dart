@@ -6,7 +6,7 @@ class ProfileAvatar extends StatelessWidget {
 
   const ProfileAvatar(
       {
-      required this.imageUrl,
+       this.imageUrl,
       })
      ;
   @override

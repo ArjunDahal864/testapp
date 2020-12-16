@@ -6,7 +6,7 @@ class CustomTabBar extends StatelessWidget {
   final int selectedIndex;
   final Function(int) onTap;
 
-  const CustomTabBar({ required this.icons, required this.selectedIndex, required this.onTap});
+  const CustomTabBar({  this.icons,  this.selectedIndex,  this.onTap});
 
   @override
   Widget build(BuildContext context) {

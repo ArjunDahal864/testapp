@@ -23,20 +23,20 @@ class DesktopFavouritePage extends StatelessWidget {
           width: 700,
           child: Scaffold(
             body: CustomScrollView(
-              slivers: [
-                SliverList(
-                    delegate: SliverChildBuilderDelegate((context, index) {
-                  // print(index);
-                  final Post post = posts[index];
-                  return Padding(
-                    padding: const EdgeInsets.only(top: 8.0),
-                    child: FavItem(url: 
-                    "https://images.unsplash.com/photo-1607931423391-d25b0b2d4c42?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=60",
-                    title: post.comments.toString(),
-                    description: post.comments.toString(),),
-                  );
-                }, childCount: posts.length))
-              ],
+              // slivers: [
+              //   SliverList(
+              //       delegate: SliverChildBuilderDelegate((context, index) {
+              //     // print(index);
+              //     // final Post post = posts[index];
+              //     return Padding(
+              //       padding: const EdgeInsets.only(top: 8.0),
+              //       child: FavItem(url: 
+              //       "https://images.unsplash.com/photo-1607931423391-d25b0b2d4c42?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=60",
+              //       title: post.comments.toString(),
+              //       description: post.comments.toString(),),
+              //     );
+              //   }, childCount: posts.length))
+              // ],
             ),
           ),
         ),
