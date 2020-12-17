@@ -13,13 +13,28 @@ The dependency that i have used here:
   flutter_bloc: ^6.1.1
   cached_network_image: ^2.2.0+1
   material_design_icons_flutter: ^4.0.5755
+  
 ```
+
+## Don't
+Don't run flutter in real device and web. Though it is responsive. backend dosen't work.
+
+
+
 ## instructions
+```
 Step 0: run the python server 
+  innerStep0: create virtual env using conda or virtualenv tand activate
+  innerStep1: pip install -r requirements.txt
+  innerStep2: make serve
+  innserStep3: done
+
 Step 1: now open this project 
-Step 2: run flutter mobile or tablet
+Step 2: run flutter mobile or tablet in emulator
 Step 3: review code
 Step 4: Call me 😂😂
+
+```
 
 My personal experience:
 It was fun to code and i have also learned a lot from this app.
