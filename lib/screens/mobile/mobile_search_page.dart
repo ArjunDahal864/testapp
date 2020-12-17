@@ -35,7 +35,9 @@ class _MobileSearchPageState extends State<MobileSearchPage> {
                 return Text(msg);
               } else if (state is Loaded) {
                 List<Noti> noti = state.noti;
-                return _list(noti);
+                return Column(children:[
+                  _list(noti)
+                ]);
               } else if (state is Loading) {
                 return Center(child: CircularProgressIndicator());
               } else {
@@ -78,6 +80,7 @@ class _MobileSearchPageState extends State<MobileSearchPage> {
                         shape: new RoundedRectangleBorder(
                             borderRadius: BorderRadius.all(Radius.circular(10))),
                         onPressed: () {
+                          textController.text = "Data";
                           _loadNotice(textController.text);
                         },
                         color: Colors.lightBlue,
