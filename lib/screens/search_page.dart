@@ -15,7 +15,10 @@ class SearchPage extends StatelessWidget {
         create: (context) => SearchBloc(notiRepo: SearchRepoImpl()),
         child: MobileSearchPage(),
       ),
-      tablet: TabletSearchPage(),
+      tablet: BlocProvider(
+        create: (context) => SearchBloc(notiRepo: SearchRepoImpl()),
+        child: TabletSearchPage(),
+      ),
       desktop: DesktopSearchPage(),
     );
   }
